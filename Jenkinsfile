@@ -1,21 +1,23 @@
-pipeline { 
-    agent any 
+pipeline {
+    agent any
+
     stages {
-        stage('Building State') { 
-            steps { 
-                sh 'make' 
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
-        stage('Testing stage'){
+        stage('Test') {
             steps {
-                sh 'make check'
-                 
+                echo 'Testing..'
             }
         }
-        stage('Deploying stage') {
+        stage('Deploy') {
             steps {
-                sh 'make publish'
+                echo 'Deploying....'
             }
         }
     }
 }
+ 
+
